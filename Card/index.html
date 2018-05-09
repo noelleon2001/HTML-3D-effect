@@ -1,0 +1,75 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>Card</title>
+    <style>
+      * {
+        margin: 0;
+        text-align: center;
+      }
+      body {
+        background: url("images/")
+      }
+      .frame {
+        width: 400px;
+        height: 400px;
+      }
+      .box {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+
+      }
+      .bottomPart {
+        top: 100px;
+        position: absolute;
+        animation: bottomEffect 30s infinite linear;
+      }
+      .card {
+        position: absolute;
+        top: 40px;
+        left: 325px;
+        width: 150px;
+        height: 226px;
+        transform-style: preserve-3d;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-120%);
+
+      }
+      .img1 {
+        transform: translateZ(1px);
+      }
+      .card div {
+        position: absolute;
+      }
+
+      .box:hover .card {
+        animation: topEffect 4s cubic-bezier(0.23, 0.59, 0.5, 0.56);
+        transform: translateY(50px);
+      }
+      @keyframes bottomEffect {
+        0% {transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg);}
+        100% {transform: rotateX(60deg) rotateY(0deg) rotateZ(-360deg);}
+      }
+      @keyframes topEffect {
+        0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-120%);}
+        50% {transform:  rotateX(0deg) rotateY(500deg) rotateZ(0deg) translateY(-10px);}
+        100% {transform: rotateX(0deg) rotateY(720deg) rotateZ(0deg) translateY(50px);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="box">
+        <img src="images/magic1.jpg" class="bottomPart" width="500px" height="500px">
+        <div class="card">
+          <div class="img1">
+            <img src="images/card2.png" width="150px" height="226px">
+          </div>
+          <div class="img2">
+            <img src="images/card.jpg" width="150px" height="226px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
